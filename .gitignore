@@ -1,0 +1,7 @@
+log/*.log
+mail/*.htm
+mail/*.txt
+mail/*.xls
+mail/*.xlsx
+Reference
+Mailer*.ini

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="big5"?>
+<MailSender>
+	<Lang name="正體中文" filename="zh_TW.xml" version="2.0">
+		<Step>
+			<Item id="1001" name="MailSender"/>
+			<Item id="1002" name="初始化..."/>
+			<Item id="1003" name="步驟 1 : 讀取收件者資訊"/>
+			<Item id="1004" name="步驟 2 : 讀取信件內容"/>
+			<Item id="1005" name="初始化失敗，是否再次修改設定值？"/>
+		</Step>
+		<InitialSettings>
+			<Item id="2000" name="編輯設定值"/>
+			<Item id="2001" name="InitialSettings 步驟"/>
+			<Item id="2002" name="請問上述顯示的設定值是否正確?"/>
+		</InitialSettings>
+		<ReadExcel>
+			<Item id="3000" name="檢查前3位  收件者的資料"/>
+			<Item id="3001" name="ReadExcel 步驟"/>
+			<Item id="3002" name="第 %d 位的資料 : "/>
+			<Item id="3003" name="請問上述顯示第 %d 位的個人資料是否正確?"/>
+		</ReadExcel>
+		<ReadLetter>
+			<Item id="4000" name="檢查前3位  合併後的信件內容"/>
+			<Item id="4001" name="ReadLetter 步驟"/>
+			<Item id="4002" name="第 %d 位的信件內容 : "/>
+			<Item id="4003" name="請問上述顯示第 %d 位轉換後的信件資料是否正確??"/>
+		</ReadLetter>
+		<SendTestMail>
+			<Item id="5000" name="寄送測試郵件"/>
+			<Item id="5001" name="SendTestMail 步驟"/>
+			<Item id="5002" name="寄送測試郵件"/>
+			<Item id="5003" name="寄給 : "/>
+			<Item id="5004" name="請檢查收件者的信箱，是否收到信件?"/>
+			<Item id="5005" name="如未收到信件，請先檢查記錄檔，位於"/>
+			<Item id="5006" name="如果記錄顯示成功，那有可能是收信方的問題，例如阻擋郵件，或是將信件歸類為垃圾郵件。"/>
+			<Item id="5007" name="共同附件檔案不存在，程式即將終止。"/>
+		</SendTestMail>
+		<SendMail>
+			<Item id="6000" name="寄送所有郵件  (僅能執行1次)"/>
+			<Item id="6001" name="SendMail 步驟"/>
+			<Item id="6002" name="寄送郵件"/>
+			<Item id="6003" name="共 %d 封"/>
+			<Item id="6004" name="第 %d 封"/>
+			<Item id="6005" name="取消訂閱"/>
+			<Item id="6006" name="如未收到信件，請先檢查記錄檔，位於"/>
+			<Item id="6007" name="如果記錄顯示成功，那有可能是收信方的問題，例如阻擋郵件，或是將信件歸類為垃圾郵件。"/>
+			<Item id="6008" name="個別附件檔案不存在，程式即將終止。"/>
+		</SendMail>
+		<EditIni>
+			<Item id="8000" name="編輯組態檔"/>
+			<Item id="8001" name="郵件伺服器"/>
+			<Item id="8002" name="寄件者資訊"/>
+			<Item id="8012" name="密件副本資訊(不填就不會寄)"/>
+			<Item id="8003" name="收件者資訊"/>
+			<Item id="8013" name="收件者的EXCEL檔案"/>
+			<Item id="8023" name="EXCEL檔案中收件者的欄位名稱"/>
+			<Item id="8004" name="信件內容"/>
+			<Item id="8014" name="PreTag + TagName + PostTag"/>
+			<Item id="8024" name="是信件中要被置換成收件者 EXCEL 檔案中的對應欄位的文字"/>
+			<Item id="8034" name="TagName 是收件者 EXCEL 檔案中的欄位名稱"/>
+			<Item id="8044" name="請注意：如果是EXCEL的欄位名稱是中文字，PreTag 與 PostTag 就必須使用中文字"/>
+			<Item id="8054" name="使用 Word 撰寫信件檔案使用者注意，存檔時要選擇「另存新檔」「已篩選的網頁」格式來存檔"/>
+			<Item id="8005" name="附件檔案"/>
+			<Item id="8015" name="共同附件檔案"/>
+			<Item id="8025" name="個別附件檔案"/>
+			<Item id="8035" name="個別附件檔案中，%s 表示該郵件的列數編號"/>
+			<Item id="8045" name="例如個別附件檔 AAA%s.txt 表示當收件者位於 Excel 第25列，那麼只有他會收到一個名為 AAA25.txt 的附加檔"/>
+			<Item id="8055" name="下列欄位不填就不會寄"/>
+			<Item id="8006" name="結束編輯"/>
+			<Item id="SMTP_smtpserver" name="SMTP 伺服器名稱"/>
+			<Item id="SMTP_smtpserverport" name="SMTP 伺服器傳輸埠 (預設: 25)"/>
+			<Item id="SMTP_sendusing" name="數值 2 表示透過網路寄送信件(cdoSendUsingPort)"/>
+			<Item id="SMTP_smtpauthenticate" name="描述透過網路連結SMTP伺服器時所採用認證的方式"/>
+			<Item id="SMTP_smtpusessl" name="使用 SSL 來進行連接 (True or False)"/>
+			<Item id="SMTP_smtpconnectiontimeout" name="SMTP 連接的時間限制."/>
+			<Item id="SMTP_sendusername" name="使用者姓名"/>
+			<Item id="SMTP_sendpassword" name="使用者密碼"/>
+			<Item id="Sender_Name" name="寄件者的姓名"/>
+			<Item id="Sender_From" name="寄件者的電子郵件位址，有些郵件伺服器要求必須與使用者姓名相符"/>
+			<Item id="Sender_ReplyTo" name="收件者回信的電子郵件位址"/>
+			<Item id="Bcc_Name" name="密件副本收件者的姓名"/>
+			<Item id="Bcc_MailTo" name="密件副本收件者的電子郵件位址"/>
+			<Item id="MailTo_File" name="含收信者個資的 Excel 檔案，請將其放在 mail 子資料夾中"/>
+			<Item id="MailTo_Worksheet" name="在上述Excel檔案中含收信者個資的工作表名稱"/>
+			<Item id="MailTo_StartNo" name="開始寄件的列數，不寫表示從第1列開始"/>
+			<Item id="MailTo_EndNo" name="結束寄件的列數，不寫表示寄到最後一列"/>
+			<Item id="ColumnName_Email" name="上述工作表中含收件者電子郵件位址的欄位名稱，EXCEL 檔案中所有欄位名稱請勿中英文夾雜或留空白，要麼一律使用中文，要麼一律使用英文，"/>
+			<Item id="ColumnName_Name" name="上述工作表中含收件者姓名的欄位名稱"/>
+			<Item id="Letter_Subject" name="信件主旨"/>
+			<Item id="Letter_Format" name="信件檔案的格式， 純文字格式(text)請設定為 TEXT； 超文件標示語言格式(html)請設定為 HTML， "/>
+			<Item id="Letter_File" name="信件所在的檔案，請將其放在 mail 子資料夾中"/>
+			<Item id="Letter_PreTag" name="文件檔內要被置換的標籤文字的前置字元"/>
+			<Item id="Letter_PostTag" name="文件檔內要被置換的標籤文字的前置字元"/>
+		</EditIni>
+		<EndJob>
+			<Item id="7000" name="結束程式"/>
+			<Item id="F001" name="Dreamer! 完工了！"/>
+		</EndJob>
+		<test>
+			<Item id="9001" name="這是測試"/>
+		</test>
+	</Lang>
+</MailSender>
