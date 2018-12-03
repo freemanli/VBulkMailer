@@ -242,7 +242,6 @@ Sub SendMail()
 		WScript.Sleep 2000
 	End With
 		
-	' WScript.Sleep 3000
 	Set SendProgress = Nothing
 End Sub
 
@@ -266,7 +265,6 @@ Sub SendTestMail()
 		.DeleteAllAttachments
 		For Each iniKey In oIni.parser("Attachements")
 			If Not .AddAttachment(oIni.parser("App")("MailFolder") & "\" & oIni.parser("Attachements")(iniKey)) Then
-				'WhatsVar(oIni.parser("Attachements")(iniKey))
 				WScript.Echo(iniKey & vbCrlf & oIni.parser("Attachements")(iniKey) & vbCrlf & oLang("5007"))
 				Set SendProgress = Nothing
 				Call EndProcess()
@@ -298,7 +296,6 @@ Sub SetupMail()
 End Sub
 
 Function Initialize()
-	Dim flagLetter, flagEXCEL
 	Dim initialProgess : Set initialProgess = New IE_GUI
 	Set fso = CreateObject("Scripting.FileSystemObject")
 	' copy image files
@@ -318,20 +315,17 @@ Function Initialize()
 		.dialog("body") 	= oLang("1004")
 		.Show "initialProgess"
 	End With
-	flagLetter = ReadLetter()
-	initialProgess.SetPct(30)
+	initialProgess.SetPct(10)
 	WScript.Sleep 100
-	initialProgess.dialog("body") = oLang("1003")
-	flagEXCEL = ParseExcel()
-	initialProgess.SetPct(100)
-	
-	WScript.Sleep 200
-	Set initialProgess = Nothing
-	If flagLetter And flagEXCEL Then
-		Initialize = True
-	Else
-		Initialize = False
+	Initialize = False
+	If ReadLetter() Then 
+		initialProgess.SetPct(30)
+		WScript.Sleep 100
+		initialProgess.dialog("body") = oLang("1003")
+		If ParseExcel(initialProgess, 30) Then Initialize = True
 	End If
+	initialProgess.Close
+	Set initialProgess = Nothing
 End Function
 
 Function ReadLetter()
@@ -349,8 +343,9 @@ Function ReadLetter()
 	End With
 End Function
 
-Function ParseExcel()
+Function ParseExcel(prog, pct)
 	Set oExcel = New ExcelFile
+	oExcel.SetProgress prog, pct
 	ParseExcel = oExcel.Read(oIni.parser("App")("MailFolder") & "\" & oIni.parser("MailTo")("File"), _
 				oIni.parser("MailTo")("Worksheet"), _
 				oIni.parser("MailTo")("StartNo"), _
@@ -375,7 +370,6 @@ End Sub
 Sub ParseIni()
 	Set oIni = New IniFile
 	oIni.Read "Mailer.ini"
-'	If oIni.parser("MailTo")("StartNo") = "" Then oIni.parser("MailTo")("StartNo") = 1
 End Sub
 
 ' ---------------------------------------------------------------------------

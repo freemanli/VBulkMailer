@@ -27,8 +27,19 @@
 
 Class ExcelFile
 	
-	Public columnName 
-	Public rowData
+	Public columnName, rowData
+	
+	Private progressBar, pct
+	
+	Public Sub SetProgress(prog, pc)
+		Set progressBar = prog
+		pct = pc
+	End Sub
+	
+	Private Sub SetPct(pc)
+		progressBar.SetPct(pc)
+	End Sub
+	
 	
 	Public Function Read(excelStr, sheetStr, startNo, endNo)
 		On Error Resume Next
@@ -44,17 +55,28 @@ Class ExcelFile
 			Dim bookPath : bookPath = .GetParentFolderName(WScript.ScriptFullName)& "\" & excelStr			
 		End With
 		excelObj.Workbooks.Open bookPath
-		If Err.Number <> 0 Then flagRead = False
+		If Err.Number <> 0 Then 
+			flagRead = False
+			Exit Function
+		End If
+		SetPct(pct+(100-pct)*.1)
 '		excelObj.Visible = True
 
 		If sheetStr = "" Then
 			' read the first sheet if no other assignation
 			Set sheetObj = excelObj.ActiveWorkbook.Worksheets(1)
-			If Err.Number <> 0 Then flagRead = False
+			If Err.Number <> 0 Then 
+				flagRead = False
+				Exit Function
+			End If
 		Else
 			Set sheetObj = excelObj.Worksheets(sheetStr)
-			If Err.Number <> 0 Then flagRead = False
+			If Err.Number <> 0 Then 
+				flagRead = False
+				Exit Function
+			End If
 		End If
+		SetPct(pct+(100-pct)*.2)
 
 		' Get the number of used rows
 		usedRowsCount = sheetObj.UsedRange.Rows.Count
@@ -65,7 +87,7 @@ Class ExcelFile
 		For colNo = 1 To usedColsCount
 			columnName(colNo) = sheetObj.Cells(1, colNo).Value
 		Next
-		
+		SetPct(pct+(100-pct)*.3)
 		' read the row data
 		If startNo = "" Then startNo = 1
 		If endNo = "" Then endNo = usedRowsCount
@@ -74,6 +96,7 @@ Class ExcelFile
 			For colNo = 1 To usedColsCount
 				rowData(rowNo)(columnName(colNo)) = sheetObj.Cells(rowNo + 1, colNo).Value
 			Next
+			SetPct(pct+(100-pct)*(.3 + .7*rowNo/endNo))
 		Next
 		
 '		WScript.Echo rowData(1)("¹q¤l¶l¥ó")

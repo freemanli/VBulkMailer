@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="big5"?>
-<MailSender>
+<VBulkMailer>
 	<Lang name="正體中文" filename="zh_TW.xml" version="2.0">
 		<Step>
-			<Item id="1001" name="MailSender"/>
+			<Item id="1001" name="VBulkMailer"/>
 			<Item id="1002" name="初始化..."/>
-			<Item id="1003" name="步驟 1 : 讀取收件者資訊"/>
-			<Item id="1004" name="步驟 2 : 讀取信件內容"/>
+			<Item id="1003" name="讀取收件者資訊"/>
+			<Item id="1004" name="讀取信件內容"/>
 			<Item id="1005" name="初始化失敗，是否再次修改設定值？"/>
 		</Step>
 		<InitialSettings>
@@ -100,4 +100,4 @@
 			<Item id="9001" name="這是測試"/>
 		</test>
 	</Lang>
-</MailSender>
+</VBulkMailer>
