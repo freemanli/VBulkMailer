@@ -1,103 +1,103 @@
-<?xml version="1.0" encoding="big5"?>
+<?xml version="1.0" encoding="utf-8"?>
 <VBulkMailer>
-	<Lang name="¥¿Åé¤¤¤å" filename="zh_TW.xml" version="2.0">
+	<Lang name="æ­£é«”ä¸­æ–‡" filename="zh_TW.xml" version="2.0">
 		<Step>
 			<Item id="1001" name="VBulkMailer"/>
-			<Item id="1002" name="ªì©l¤Æ..."/>
-			<Item id="1003" name="Åª¨ú¦¬¥óªÌ¸ê°T"/>
-			<Item id="1004" name="Åª¨ú«H¥ó¤º®e"/>
-			<Item id="1005" name="ªì©l¤Æ¥¢±Ñ¡A¬O§_¦A¦¸­×§ï³]©w­È¡H"/>
+			<Item id="1002" name="åˆå§‹åŒ–..."/>
+			<Item id="1003" name="è®€å–æ”¶ä»¶è€…è³‡è¨Š"/>
+			<Item id="1004" name="è®€å–ä¿¡ä»¶å…§å®¹"/>
+			<Item id="1005" name="åˆå§‹åŒ–å¤±æ•—ï¼Œæ˜¯å¦å†æ¬¡ä¿®æ”¹è¨­å®šå€¼ï¼Ÿ"/>
 		</Step>
 		<InitialSettings>
-			<Item id="2000" name="½s¿è³]©w­È"/>
-			<Item id="2001" name="InitialSettings ¨BÆJ"/>
-			<Item id="2002" name="½Ð°Ý¤W­zÅã¥Üªº³]©w­È¬O§_¥¿½T?"/>
+			<Item id="2000" name="ç·¨è¼¯è¨­å®šå€¼"/>
+			<Item id="2001" name="InitialSettings æ­¥é©Ÿ"/>
+			<Item id="2002" name="è«‹å•ä¸Šè¿°é¡¯ç¤ºçš„è¨­å®šå€¼æ˜¯å¦æ­£ç¢º?"/>
 		</InitialSettings>
 		<ReadExcel>
-			<Item id="3000" name="ÀË¬d«e3¦ì  ¦¬¥óªÌªº¸ê®Æ"/>
-			<Item id="3001" name="ReadExcel ¨BÆJ"/>
-			<Item id="3002" name="²Ä %d ¦ìªº¸ê®Æ : "/>
-			<Item id="3003" name="½Ð°Ý¤W­zÅã¥Ü²Ä %d ¦ìªº­Ó¤H¸ê®Æ¬O§_¥¿½T?"/>
+			<Item id="3000" name="æª¢æŸ¥å‰3ä½  æ”¶ä»¶è€…çš„è³‡æ–™"/>
+			<Item id="3001" name="ReadExcel æ­¥é©Ÿ"/>
+			<Item id="3002" name="ç¬¬ %d ä½çš„è³‡æ–™ : "/>
+			<Item id="3003" name="è«‹å•ä¸Šè¿°é¡¯ç¤ºç¬¬ %d ä½çš„å€‹äººè³‡æ–™æ˜¯å¦æ­£ç¢º?"/>
 		</ReadExcel>
 		<ReadLetter>
-			<Item id="4000" name="ÀË¬d«e3¦ì  ¦X¨Ö«áªº«H¥ó¤º®e"/>
-			<Item id="4001" name="ReadLetter ¨BÆJ"/>
-			<Item id="4002" name="²Ä %d ¦ìªº«H¥ó¤º®e : "/>
-			<Item id="4003" name="½Ð°Ý¤W­zÅã¥Ü²Ä %d ¦ìÂà´««áªº«H¥ó¸ê®Æ¬O§_¥¿½T??"/>
+			<Item id="4000" name="æª¢æŸ¥å‰3ä½  åˆä½µå¾Œçš„ä¿¡ä»¶å…§å®¹"/>
+			<Item id="4001" name="ReadLetter æ­¥é©Ÿ"/>
+			<Item id="4002" name="ç¬¬ %d ä½çš„ä¿¡ä»¶å…§å®¹ : "/>
+			<Item id="4003" name="è«‹å•ä¸Šè¿°é¡¯ç¤ºç¬¬ %d ä½è½‰æ›å¾Œçš„ä¿¡ä»¶è³‡æ–™æ˜¯å¦æ­£ç¢º??"/>
 		</ReadLetter>
 		<SendTestMail>
-			<Item id="5000" name="±H°e´ú¸Õ¶l¥ó"/>
-			<Item id="5001" name="SendTestMail ¨BÆJ"/>
-			<Item id="5002" name="±H°e´ú¸Õ¶l¥ó"/>
-			<Item id="5003" name="±Hµ¹ : "/>
-			<Item id="5004" name="½ÐÀË¬d¦¬¥óªÌªº«H½c¡A¬O§_¦¬¨ì«H¥ó?"/>
-			<Item id="5005" name="¦p¥¼¦¬¨ì«H¥ó¡A½Ð¥ýÀË¬d°O¿ýÀÉ¡A¦ì©ó"/>
-			<Item id="5006" name="¦pªG°O¿ýÅã¥Ü¦¨¥\¡A¨º¦³¥i¯à¬O¦¬«H¤èªº°ÝÃD¡A¨Ò¦pªý¾×¶l¥ó¡A©Î¬O±N«H¥óÂkÃþ¬°©U§£¶l¥ó¡C"/>
-			<Item id="5007" name="¦@¦Pªþ¥óÀÉ®×¤£¦s¦b¡Aµ{¦¡§Y±N²×¤î¡C"/>
+			<Item id="5000" name="å¯„é€æ¸¬è©¦éƒµä»¶"/>
+			<Item id="5001" name="SendTestMail æ­¥é©Ÿ"/>
+			<Item id="5002" name="å¯„é€æ¸¬è©¦éƒµä»¶"/>
+			<Item id="5003" name="å¯„çµ¦ : "/>
+			<Item id="5004" name="è«‹æª¢æŸ¥æ”¶ä»¶è€…çš„ä¿¡ç®±ï¼Œæ˜¯å¦æ”¶åˆ°ä¿¡ä»¶?"/>
+			<Item id="5005" name="å¦‚æœªæ”¶åˆ°ä¿¡ä»¶ï¼Œè«‹å…ˆæª¢æŸ¥è¨˜éŒ„æª”ï¼Œä½æ–¼"/>
+			<Item id="5006" name="å¦‚æžœè¨˜éŒ„é¡¯ç¤ºæˆåŠŸï¼Œé‚£æœ‰å¯èƒ½æ˜¯æ”¶ä¿¡æ–¹çš„å•é¡Œï¼Œä¾‹å¦‚é˜»æ“‹éƒµä»¶ï¼Œæˆ–æ˜¯å°‡ä¿¡ä»¶æ­¸é¡žç‚ºåžƒåœ¾éƒµä»¶ã€‚"/>
+			<Item id="5007" name="å…±åŒé™„ä»¶æª”æ¡ˆä¸å­˜åœ¨ï¼Œç¨‹å¼å³å°‡çµ‚æ­¢ã€‚"/>
 		</SendTestMail>
 		<SendMail>
-			<Item id="6000" name="±H°e©Ò¦³¶l¥ó  (¶È¯à°õ¦æ1¦¸)"/>
-			<Item id="6001" name="SendMail ¨BÆJ"/>
-			<Item id="6002" name="±H°e¶l¥ó"/>
-			<Item id="6003" name="¦@ %d «Ê"/>
-			<Item id="6004" name="²Ä %d «Ê"/>
-			<Item id="6005" name="¨ú®ø­q¾\"/>
-			<Item id="6006" name="¦p¥¼¦¬¨ì«H¥ó¡A½Ð¥ýÀË¬d°O¿ýÀÉ¡A¦ì©ó"/>
-			<Item id="6007" name="¦pªG°O¿ýÅã¥Ü¦¨¥\¡A¨º¦³¥i¯à¬O¦¬«H¤èªº°ÝÃD¡A¨Ò¦pªý¾×¶l¥ó¡A©Î¬O±N«H¥óÂkÃþ¬°©U§£¶l¥ó¡C"/>
-			<Item id="6008" name="­Ó§Oªþ¥óÀÉ®×¤£¦s¦b¡Aµ{¦¡§Y±N²×¤î¡C"/>
+			<Item id="6000" name="å¯„é€æ‰€æœ‰éƒµä»¶  (åƒ…èƒ½åŸ·è¡Œ1æ¬¡)"/>
+			<Item id="6001" name="SendMail æ­¥é©Ÿ"/>
+			<Item id="6002" name="å¯„é€éƒµä»¶"/>
+			<Item id="6003" name="å…± %d å°"/>
+			<Item id="6004" name="ç¬¬ %d å°"/>
+			<Item id="6005" name="å–æ¶ˆè¨‚é–±"/>
+			<Item id="6006" name="å¦‚æœªæ”¶åˆ°ä¿¡ä»¶ï¼Œè«‹å…ˆæª¢æŸ¥è¨˜éŒ„æª”ï¼Œä½æ–¼"/>
+			<Item id="6007" name="å¦‚æžœè¨˜éŒ„é¡¯ç¤ºæˆåŠŸï¼Œé‚£æœ‰å¯èƒ½æ˜¯æ”¶ä¿¡æ–¹çš„å•é¡Œï¼Œä¾‹å¦‚é˜»æ“‹éƒµä»¶ï¼Œæˆ–æ˜¯å°‡ä¿¡ä»¶æ­¸é¡žç‚ºåžƒåœ¾éƒµä»¶ã€‚"/>
+			<Item id="6008" name="å€‹åˆ¥é™„ä»¶æª”æ¡ˆä¸å­˜åœ¨ï¼Œç¨‹å¼å³å°‡çµ‚æ­¢ã€‚"/>
 		</SendMail>
 		<EditIni>
-			<Item id="8000" name="½s¿è²ÕºAÀÉ"/>
-			<Item id="8001" name="¶l¥ó¦øªA¾¹"/>
-			<Item id="8002" name="±H¥óªÌ¸ê°T"/>
-			<Item id="8012" name="±K¥ó°Æ¥»¸ê°T(¤£¶ñ´N¤£·|±H)"/>
-			<Item id="8003" name="¦¬¥óªÌ¸ê°T"/>
-			<Item id="8013" name="¦¬¥óªÌªºEXCELÀÉ®×"/>
-			<Item id="8023" name="EXCELÀÉ®×¤¤¦¬¥óªÌªºÄæ¦ì¦WºÙ"/>
-			<Item id="8004" name="«H¥ó¤º®e"/>
+			<Item id="8000" name="ç·¨è¼¯çµ„æ…‹æª”"/>
+			<Item id="8001" name="éƒµä»¶ä¼ºæœå™¨"/>
+			<Item id="8002" name="å¯„ä»¶è€…è³‡è¨Š"/>
+			<Item id="8012" name="å¯†ä»¶å‰¯æœ¬è³‡è¨Š(ä¸å¡«å°±ä¸æœƒå¯„)"/>
+			<Item id="8003" name="æ”¶ä»¶è€…è³‡è¨Š"/>
+			<Item id="8013" name="æ”¶ä»¶è€…çš„EXCELæª”æ¡ˆ"/>
+			<Item id="8023" name="EXCELæª”æ¡ˆä¸­æ”¶ä»¶è€…çš„æ¬„ä½åç¨±"/>
+			<Item id="8004" name="ä¿¡ä»¶å…§å®¹"/>
 			<Item id="8014" name="PreTag + TagName + PostTag"/>
-			<Item id="8024" name="¬O«H¥ó¤¤­n³Q¸m´«¦¨¦¬¥óªÌ EXCEL ÀÉ®×¤¤ªº¹ïÀ³Äæ¦ìªº¤å¦r"/>
-			<Item id="8034" name="TagName ¬O¦¬¥óªÌ EXCEL ÀÉ®×¤¤ªºÄæ¦ì¦WºÙ"/>
-			<Item id="8044" name="½Ðª`·N¡G¦pªG¬OEXCELªºÄæ¦ì¦WºÙ¬O¤¤¤å¦r¡APreTag »P PostTag ´N¥²¶·¨Ï¥Î¤¤¤å¦r"/>
-			<Item id="8054" name="¨Ï¥Î Word ¼¶¼g«H¥óÀÉ®×¨Ï¥ÎªÌª`·N¡A¦sÀÉ®É­n¿ï¾Ü¡u¥t¦s·sÀÉ¡v¡u¤w¿z¿ïªººô­¶¡v®æ¦¡¨Ó¦sÀÉ"/>
-			<Item id="8005" name="ªþ¥óÀÉ®×"/>
-			<Item id="8015" name="¦@¦Pªþ¥óÀÉ®×"/>
-			<Item id="8025" name="­Ó§Oªþ¥óÀÉ®×"/>
-			<Item id="8035" name="­Ó§Oªþ¥óÀÉ®×¤¤¡A%s ªí¥Ü¸Ó¶l¥óªº¦C¼Æ½s¸¹"/>
-			<Item id="8045" name="¨Ò¦p­Ó§Oªþ¥óÀÉ AAA%s.txt ªí¥Ü·í¦¬¥óªÌ¦ì©ó Excel ²Ä25¦C¡A¨º»ò¥u¦³¥L·|¦¬¨ì¤@­Ó¦W¬° AAA25.txt ªºªþ¥[ÀÉ"/>
-			<Item id="8055" name="¤U¦CÄæ¦ì¤£¶ñ´N¤£·|±H"/>
-			<Item id="8006" name="µ²§ô½s¿è"/>
-			<Item id="SMTP_smtpserver" name="SMTP ¦øªA¾¹¦WºÙ"/>
-			<Item id="SMTP_smtpserverport" name="SMTP ¦øªA¾¹¶Ç¿é°ð (¹w³]: 25)"/>
-			<Item id="SMTP_sendusing" name="¼Æ­È 2 ªí¥Ü³z¹Lºô¸ô±H°e«H¥ó(cdoSendUsingPort)"/>
-			<Item id="SMTP_smtpauthenticate" name="´y­z³z¹Lºô¸ô³sµ²SMTP¦øªA¾¹®É©Ò±Ä¥Î»{ÃÒªº¤è¦¡"/>
-			<Item id="SMTP_smtpusessl" name="¨Ï¥Î SSL ¨Ó¶i¦æ³s±µ (True or False)"/>
-			<Item id="SMTP_smtpconnectiontimeout" name="SMTP ³s±µªº®É¶¡­­¨î."/>
-			<Item id="SMTP_sendusername" name="¨Ï¥ÎªÌ©m¦W"/>
-			<Item id="SMTP_sendpassword" name="¨Ï¥ÎªÌ±K½X"/>
-			<Item id="Sender_Name" name="±H¥óªÌªº©m¦W"/>
-			<Item id="Sender_From" name="±H¥óªÌªº¹q¤l¶l¥ó¦ì§}¡A¦³¨Ç¶l¥ó¦øªA¾¹­n¨D¥²¶·»P¨Ï¥ÎªÌ©m¦W¬Û²Å"/>
-			<Item id="Sender_ReplyTo" name="¦¬¥óªÌ¦^«Hªº¹q¤l¶l¥ó¦ì§}"/>
-			<Item id="Bcc_Name" name="±K¥ó°Æ¥»¦¬¥óªÌªº©m¦W"/>
-			<Item id="Bcc_MailTo" name="±K¥ó°Æ¥»¦¬¥óªÌªº¹q¤l¶l¥ó¦ì§}"/>
-			<Item id="MailTo_File" name="§t¦¬«HªÌ­Ó¸êªº Excel ÀÉ®×¡A½Ð±N¨ä©ñ¦b mail ¤l¸ê®Æ§¨¤¤"/>
-			<Item id="MailTo_Worksheet" name="¦b¤W­zExcelÀÉ®×¤¤§t¦¬«HªÌ­Ó¸êªº¤u§@ªí¦WºÙ"/>
-			<Item id="MailTo_StartNo" name="¶}©l±H¥óªº¦C¼Æ¡A¤£¼gªí¥Ü±q²Ä1¦C¶}©l"/>
-			<Item id="MailTo_EndNo" name="µ²§ô±H¥óªº¦C¼Æ¡A¤£¼gªí¥Ü±H¨ì³Ì«á¤@¦C"/>
-			<Item id="ColumnName_Email" name="¤W­z¤u§@ªí¤¤§t¦¬¥óªÌ¹q¤l¶l¥ó¦ì§}ªºÄæ¦ì¦WºÙ¡AEXCEL ÀÉ®×¤¤©Ò¦³Äæ¦ì¦WºÙ½Ð¤Å¤¤­^¤å§¨Âø©Î¯dªÅ¥Õ¡A­n»ò¤@«ß¨Ï¥Î¤¤¤å¡A­n»ò¤@«ß¨Ï¥Î­^¤å¡A"/>
-			<Item id="ColumnName_Name" name="¤W­z¤u§@ªí¤¤§t¦¬¥óªÌ©m¦WªºÄæ¦ì¦WºÙ"/>
-			<Item id="Letter_Subject" name="«H¥ó¥D¦®"/>
-			<Item id="Letter_Format" name="«H¥óÀÉ®×ªº®æ¦¡¡A ¯Â¤å¦r®æ¦¡(text)½Ð³]©w¬° TEXT¡F ¶W¤å¥ó¼Ð¥Ü»y¨¥®æ¦¡(html)½Ð³]©w¬° HTML¡A "/>
-			<Item id="Letter_File" name="«H¥ó©Ò¦bªºÀÉ®×¡A½Ð±N¨ä©ñ¦b mail ¤l¸ê®Æ§¨¤¤"/>
-			<Item id="Letter_PreTag" name="¤å¥óÀÉ¤º­n³Q¸m´«ªº¼ÐÅÒ¤å¦rªº«e¸m¦r¤¸"/>
-			<Item id="Letter_PostTag" name="¤å¥óÀÉ¤º­n³Q¸m´«ªº¼ÐÅÒ¤å¦rªº«e¸m¦r¤¸"/>
+			<Item id="8024" name="æ˜¯ä¿¡ä»¶ä¸­è¦è¢«ç½®æ›æˆæ”¶ä»¶è€… EXCEL æª”æ¡ˆä¸­çš„å°æ‡‰æ¬„ä½çš„æ–‡å­—"/>
+			<Item id="8034" name="TagName æ˜¯æ”¶ä»¶è€… EXCEL æª”æ¡ˆä¸­çš„æ¬„ä½åç¨±"/>
+			<Item id="8044" name="è«‹æ³¨æ„ï¼šå¦‚æžœæ˜¯EXCELçš„æ¬„ä½åç¨±æ˜¯ä¸­æ–‡å­—ï¼ŒPreTag èˆ‡ PostTag å°±å¿…é ˆä½¿ç”¨ä¸­æ–‡å­—"/>
+			<Item id="8054" name="ä½¿ç”¨ Word æ’°å¯«ä¿¡ä»¶æª”æ¡ˆä½¿ç”¨è€…æ³¨æ„ï¼Œå­˜æª”æ™‚è¦é¸æ“‡ã€Œå¦å­˜æ–°æª”ã€ã€Œå·²ç¯©é¸çš„ç¶²é ã€æ ¼å¼ä¾†å­˜æª”"/>
+			<Item id="8005" name="é™„ä»¶æª”æ¡ˆ"/>
+			<Item id="8015" name="å…±åŒé™„ä»¶æª”æ¡ˆ"/>
+			<Item id="8025" name="å€‹åˆ¥é™„ä»¶æª”æ¡ˆ"/>
+			<Item id="8035" name="å€‹åˆ¥é™„ä»¶æª”æ¡ˆä¸­ï¼Œ%s è¡¨ç¤ºè©²éƒµä»¶çš„åˆ—æ•¸ç·¨è™Ÿ"/>
+			<Item id="8045" name="ä¾‹å¦‚å€‹åˆ¥é™„ä»¶æª” AAA%s.txt è¡¨ç¤ºç•¶æ”¶ä»¶è€…ä½æ–¼ Excel ç¬¬25åˆ—ï¼Œé‚£éº¼åªæœ‰ä»–æœƒæ”¶åˆ°ä¸€å€‹åç‚º AAA25.txt çš„é™„åŠ æª”"/>
+			<Item id="8055" name="ä¸‹åˆ—æ¬„ä½ä¸å¡«å°±ä¸æœƒå¯„"/>
+			<Item id="8006" name="çµæŸç·¨è¼¯"/>
+			<Item id="SMTP_smtpserver" name="SMTP ä¼ºæœå™¨åç¨±"/>
+			<Item id="SMTP_smtpserverport" name="SMTP ä¼ºæœå™¨å‚³è¼¸åŸ  (é è¨­: 25)"/>
+			<Item id="SMTP_sendusing" name="æ•¸å€¼ 2 è¡¨ç¤ºé€éŽç¶²è·¯å¯„é€ä¿¡ä»¶(cdoSendUsingPort)"/>
+			<Item id="SMTP_smtpauthenticate" name="æè¿°é€éŽç¶²è·¯é€£çµSMTPä¼ºæœå™¨æ™‚æ‰€æŽ¡ç”¨èªè­‰çš„æ–¹å¼"/>
+			<Item id="SMTP_smtpusessl" name="ä½¿ç”¨ SSL ä¾†é€²è¡Œé€£æŽ¥ (True or False)"/>
+			<Item id="SMTP_smtpconnectiontimeout" name="SMTP é€£æŽ¥çš„æ™‚é–“é™åˆ¶."/>
+			<Item id="SMTP_sendusername" name="ä½¿ç”¨è€…å§“å"/>
+			<Item id="SMTP_sendpassword" name="ä½¿ç”¨è€…å¯†ç¢¼"/>
+			<Item id="Sender_Name" name="å¯„ä»¶è€…çš„å§“å"/>
+			<Item id="Sender_From" name="å¯„ä»¶è€…çš„é›»å­éƒµä»¶ä½å€ï¼Œæœ‰äº›éƒµä»¶ä¼ºæœå™¨è¦æ±‚å¿…é ˆèˆ‡ä½¿ç”¨è€…å§“åç›¸ç¬¦"/>
+			<Item id="Sender_ReplyTo" name="æ”¶ä»¶è€…å›žä¿¡çš„é›»å­éƒµä»¶ä½å€"/>
+			<Item id="Bcc_Name" name="å¯†ä»¶å‰¯æœ¬æ”¶ä»¶è€…çš„å§“å"/>
+			<Item id="Bcc_MailTo" name="å¯†ä»¶å‰¯æœ¬æ”¶ä»¶è€…çš„é›»å­éƒµä»¶ä½å€"/>
+			<Item id="MailTo_File" name="å«æ”¶ä¿¡è€…å€‹è³‡çš„ Excel æª”æ¡ˆï¼Œè«‹å°‡å…¶æ”¾åœ¨ mail å­è³‡æ–™å¤¾ä¸­"/>
+			<Item id="MailTo_Worksheet" name="åœ¨ä¸Šè¿°Excelæª”æ¡ˆä¸­å«æ”¶ä¿¡è€…å€‹è³‡çš„å·¥ä½œè¡¨åç¨±"/>
+			<Item id="MailTo_StartNo" name="é–‹å§‹å¯„ä»¶çš„åˆ—æ•¸ï¼Œä¸å¯«è¡¨ç¤ºå¾žç¬¬1åˆ—é–‹å§‹"/>
+			<Item id="MailTo_EndNo" name="çµæŸå¯„ä»¶çš„åˆ—æ•¸ï¼Œä¸å¯«è¡¨ç¤ºå¯„åˆ°æœ€å¾Œä¸€åˆ—"/>
+			<Item id="ColumnName_Email" name="ä¸Šè¿°å·¥ä½œè¡¨ä¸­å«æ”¶ä»¶è€…é›»å­éƒµä»¶ä½å€çš„æ¬„ä½åç¨±ï¼ŒEXCEL æª”æ¡ˆä¸­æ‰€æœ‰æ¬„ä½åç¨±è«‹å‹¿ä¸­è‹±æ–‡å¤¾é›œæˆ–ç•™ç©ºç™½ï¼Œè¦éº¼ä¸€å¾‹ä½¿ç”¨ä¸­æ–‡ï¼Œè¦éº¼ä¸€å¾‹ä½¿ç”¨è‹±æ–‡ï¼Œ"/>
+			<Item id="ColumnName_Name" name="ä¸Šè¿°å·¥ä½œè¡¨ä¸­å«æ”¶ä»¶è€…å§“åçš„æ¬„ä½åç¨±"/>
+			<Item id="Letter_Subject" name="ä¿¡ä»¶ä¸»æ—¨"/>
+			<Item id="Letter_Format" name="ä¿¡ä»¶æª”æ¡ˆçš„æ ¼å¼ï¼Œ ç´”æ–‡å­—æ ¼å¼(text)è«‹è¨­å®šç‚º TEXTï¼› è¶…æ–‡ä»¶æ¨™ç¤ºèªžè¨€æ ¼å¼(html)è«‹è¨­å®šç‚º HTMLï¼Œ "/>
+			<Item id="Letter_File" name="ä¿¡ä»¶æ‰€åœ¨çš„æª”æ¡ˆï¼Œè«‹å°‡å…¶æ”¾åœ¨ mail å­è³‡æ–™å¤¾ä¸­"/>
+			<Item id="Letter_PreTag" name="æ–‡ä»¶æª”å…§è¦è¢«ç½®æ›çš„æ¨™ç±¤æ–‡å­—çš„å‰ç½®å­—å…ƒ"/>
+			<Item id="Letter_PostTag" name="æ–‡ä»¶æª”å…§è¦è¢«ç½®æ›çš„æ¨™ç±¤æ–‡å­—çš„å‰ç½®å­—å…ƒ"/>
 		</EditIni>
 		<EndJob>
-			<Item id="7000" name="µ²§ôµ{¦¡"/>
-			<Item id="F001" name="Dreamer! §¹¤u¤F¡I"/>
+			<Item id="7000" name="çµæŸç¨‹å¼"/>
+			<Item id="F001" name="Dreamer! å®Œå·¥äº†ï¼"/>
 		</EndJob>
 		<test>
-			<Item id="9001" name="³o¬O´ú¸Õ"/>
+			<Item id="9001" name="é€™æ˜¯æ¸¬è©¦"/>
 		</test>
 	</Lang>
 </VBulkMailer>
