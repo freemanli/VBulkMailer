@@ -96,7 +96,7 @@ Class ExcelFile
 			For colNo = 1 To usedColsCount
 				rowData(rowNo)(columnName(colNo)) = sheetObj.Cells(rowNo + 1, colNo).Value
 			Next
-			SetPct(pct+(100-pct)*(.3 + .7*rowNo/endNo))
+			If (rowNo Mod 10) = 0 Then SetPct(pct+(100-pct)*(.3 + .7*rowNo/endNo))
 		Next
 		
 '		WScript.Echo rowData(1)("¹q¤l¶l¥ó")

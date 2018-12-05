@@ -37,6 +37,7 @@ Sub EditIni()
 	sStyle = sStyle & ".tablink:hover { background-color: #777;}" & sEnd
 	sStyle = sStyle & ".tabcontent { color: white; display: none; padding: 80px 20px; height: 100%;}" & sEnd
 	sStyle = sStyle & ".article { width:99%;}" & sEnd
+	sStyle = sStyle & ".secTitle { font-weight: bold;color:blue;}" & sEnd
 	sStyle = sStyle & ".inptext { width:90%;}" & sEnd
 	sStyle = sStyle & ".tdkey { width:25%;}" & sEnd
 	sStyle = sStyle & ".explain { font-size:small;width:30%;}" & sEnd
@@ -93,31 +94,29 @@ Sub EditIni()
 	sBody = sBody & "</table></div>" & sEnd
 
 	' Sender
-	sBody = sBody & "<div id='Tab2' class='tabcontent'><h3>" & oLang("8002") & "</h3>" & sEnd
-	sBody = sBody & "<table class='article'>"
-	For Each key In oIni.parser("Sender")
-		sBody = sBody & "<tr>"
-		sBody = sBody & "<td class='tdkey'>" & key & "</td>"
-		sBody = sBody & "<td> = </td>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='Sender_" & key & "' value='" & oIni.parser("Sender")(key) & "' onchange='change(""Sender"",""" & key & """)'/>"
-		sBody = sBody & "<span id='Sender_" & key & "_status'></span></td>"
-		sBody = sBody & "<td class='explain'>" & oLang("Sender_" & key ) & "</td>"
-		sBody = sBody & "</tr>"
+	sBody = sBody & "<div id='Tab2' class='tabcontent'>"
+	Dim Sender(2)
+	Sender(0) = "Sender"
+	Sender(1) = "Bcc"
+	Sender(2) = "TestTo"
+	For i = 0 To 2
+		sBody = sBody & "<span class='secTitle'>" & oLang(Sender(i)) & "</span><br/>" & sEnd
+		sBody = sBody & "<table class='article'>"
+		For Each key In oIni.parser(Sender(i))
+			sBody = sBody & "<tr>"
+			sBody = sBody & "<td class='tdkey'>" & key & "</td>"
+			sBody = sBody & "<td> = </td>"
+			sBody = sBody & "<td><input type='text' class='inptext' id='" & Sender(i) & "_" & key & "' value='" & oIni.parser(Sender(i))(key) & "' onchange='change(""" & Sender(i) & """,""" & key & """)'/>"
+			sBody = sBody & "<span id='" & Sender(i) & "_" & key & "_status'></span></td>"
+			sBody = sBody & "<td class='explain'>" & oLang(Sender(i) & "_" & key ) & "</td>"
+			sBody = sBody & "</tr>"
+		Next
+		sBody = sBody & "</table>" & sEnd
 	Next
-	sBody = sBody & "</table><h3>" & oLang("8012") & "</h3><table class='article'>"
-	For Each key In oIni.parser("Bcc")
-		sBody = sBody & "<tr>"
-		sBody = sBody & "<td class='tdkey'>" & key & "</td>"
-		sBody = sBody & "<td> = </td>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='Bcc_" & key & "' value='" & oIni.parser("Bcc")(key) & "' onchange='change(""Bcc"",""" & key & """)'/>"
-		sBody = sBody & "<span id='Bcc_" & key & "_status'></span></td>"
-		sBody = sBody & "<td class='explain'>" & oLang("Bcc_" & key ) & "</td>"
-		sBody = sBody & "</tr>"
-	Next
-	sBody = sBody & "</table></div>" & sEnd
+	sBody = sBody & "</div>" & sEnd
 	
 	' Receiver
-	sBody = sBody & "<div id='Tab3' class='tabcontent'><strong>" & oLang("8013") & "</strong><br/>" & sEnd
+	sBody = sBody & "<div id='Tab3' class='tabcontent'><span class='secTitle'>" & oLang("8013") & "</span><br/>" & sEnd
 	sBody = sBody & "<table class='article'>"
 	For Each key In oIni.parser("MailTo")
 		sBody = sBody & "<tr>"
@@ -128,7 +127,7 @@ Sub EditIni()
 		sBody = sBody & "<td class='explain'>" & oLang("MailTo_" & key ) & "</td>"
 		sBody = sBody & "</tr>"
 	Next
-	sBody = sBody & "</table><strong>" & oLang("8023") & "</strong><br/><table class='article'>"
+	sBody = sBody & "</table><span class='secTitle'>" & oLang("8023") & "</span><br/><table class='article'>"
 	For Each key In oIni.parser("ColumnName")
 		sBody = sBody & "<tr>"
 		sBody = sBody & "<td class='tdkey'>" & key & "</td>"

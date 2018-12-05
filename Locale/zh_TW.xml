@@ -50,6 +50,9 @@
 			<Item id="8000" name="編輯組態檔"/>
 			<Item id="8001" name="郵件伺服器"/>
 			<Item id="8002" name="寄件者資訊"/>
+			<Item id="Sender" name="寄件者資訊"/>
+			<Item id="Bcc" name="密件副本資訊(不填就不會寄)"/>
+			<Item id="TestTo" name="測試郵件收件者"/>
 			<Item id="8012" name="密件副本資訊(不填就不會寄)"/>
 			<Item id="8003" name="收件者資訊"/>
 			<Item id="8013" name="收件者的EXCEL檔案"/>
@@ -80,6 +83,8 @@
 			<Item id="Sender_ReplyTo" name="收件者回信的電子郵件位址"/>
 			<Item id="Bcc_Name" name="密件副本收件者的姓名"/>
 			<Item id="Bcc_MailTo" name="密件副本收件者的電子郵件位址"/>
+			<Item id="TestTo_Name" name="測試郵件收件者的姓名"/>
+			<Item id="TestTo_MailTo" name="測試郵件收件者的電子郵件位址"/>
 			<Item id="MailTo_File" name="含收信者個資的 Excel 檔案，請將其放在 mail 子資料夾中"/>
 			<Item id="MailTo_Worksheet" name="在上述Excel檔案中含收信者個資的工作表名稱"/>
 			<Item id="MailTo_StartNo" name="開始寄件的列數，不寫表示從第1列開始"/>
