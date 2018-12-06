@@ -158,8 +158,11 @@ Class IE_GUI
 				'strDebug = strDebug & objItem.ProcessId & " -> " & objItem.ParentProcessId & vbCrlf
 				Set lastItem = objItem
 			Next
-			CreateObject("WScript.Shell").AppActivate(lastItem.ParentProcessId)
-			'CreateObject("WScript.Shell").AppActivate(lastItem.ProcessId)
+			With CreateObject("WScript.Shell")
+				.AppActivate(lastItem.ParentProcessId)
+				' .AppActivate(lastItem.ProcessId)
+				.SendKeys "{TAB}"
+			End With
 			'WScript.Echo strDebug
 		End With
 	End Sub
@@ -196,17 +199,16 @@ Class IE_GUI
 	
 		Set oGUI = WScript.CreateObject("InternetExplorer.Application", GUIName & "_")
 		' ExecuteGlobal "Sub " & GUIName & "_OnQuit() : " & GUIName & ".Close : End Sub"
-		oGUI.Visible = False
+		' =============================== Unable to get object of InternetExplorer.Application under Windows 10, There is no OnQuit event.
+		SetCommonValue(oGUI)
 		Dim hWnd : hWnd = oGUI.HWND 	
 		' receives the window handle
 		oGUI.Navigate2 window("navigate")
 		If window("type") = IE_GUI_PROGRESS_BAR Then oGUI.Document.Body.InnerHTML = dialog("innerHTML")
-		WScript.Sleep 500
-		' =============================== 在Win10, IE11 無法取得InternetExplorer.Application物件，所以加入以下區塊, 沒有 OnQuit 事件
+		WScript.Sleep 100
 		Dim appWindow
 		For Each appWindow In CreateObject("Shell.application").Windows
 			If hWnd = appWindow.HWND Then
-			' If instr(appWindow.LocationURL, tempName) <> 0 Then 
 				Set oGUI = appWindow
 				Exit For
 			End If
@@ -216,7 +218,6 @@ Class IE_GUI
 			Do While .ReadyState <> 4
 				Wscript.sleep 10
 			Loop
-			SetCommonValue(oGUI)
 			.Document.Title = dialog("title")
 			.Document.Body.Scroll = dialog("scroll")
 			.Visible = True
