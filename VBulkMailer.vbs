@@ -27,7 +27,7 @@ Include("include\ExtMessage.vb")
 Include("include\EditIni.vb")
 Const WAIT_TIME = 5000
 ' Declare Global Variable
-Dim oIni, oLang, oExcel, oMsg, sLetter, fso
+Dim oIni, oLang, oExcel, oMsg, sLetter, fso, procGUI
 
 Call Main
 
@@ -37,7 +37,7 @@ Sub Main()
 	
 	If Not Initialize() Then Call EditIni()
 	
-	Dim procGUI : Set procGUI = New IE_GUI
+	Set procGUI = New IE_GUI
 	With procGUI
 		.window("type") = IE_GUI_HTML
 		.dialog("title") = mailerTitle
@@ -84,7 +84,6 @@ Sub Main()
 		WEnd
 	End With
 	WScript.Sleep 200
-	Set procGUI = Nothing
 	Call EndProcess()
 End Sub
 
@@ -96,6 +95,8 @@ Sub EndProcess()
 		.DeleteFile destinationPath & "mail_okay.png", True
 		.DeleteFile destinationPath & "mail_progress.gif", True
 	End With
+	procGUI.close
+	Set procGUI = Nothing
 	Set oExcel = Nothing
 	Set oIni = Nothing
 	Set oLang = Nothing
@@ -329,18 +330,13 @@ Function Initialize()
 End Function
 
 Function ReadLetter()
-	Dim letterPath
-	With CreateObject("Scripting.FileSystemObject")
-		letterPath = .GetParentFolderName(WScript.ScriptFullName) & "\"
-		letterPath = letterPath & oIni.parser("App")("MailFolder") & "\"
-		letterPath = letterPath & oIni.parser("Letter")("File")
-		If .FileExists(letterPath) Then
-			sLetter = .OpenTextFile(letterPath, 1, False).ReadAll
-			ReadLetter = True
-		Else
-			ReadLetter = False
-		End If
-	End With
+	Dim letterPath : letterPath = oIni.parser("App")("MailFolder") & "\" & oIni.parser("Letter")("File")
+	If FileExists(letterPath) Then
+		sLetter = CreateObject("Scripting.FileSystemObject").OpenTextFile(letterPath, 1, False).ReadAll
+		ReadLetter = True
+	Else
+		ReadLetter = False
+	End If
 End Function
 
 Function ParseExcel(prog, pct)
@@ -372,6 +368,18 @@ Sub ParseIni()
 	oIni.Read "Mailer.ini"
 End Sub
 
+Function FileExists(relativePath)
+	Dim realPath
+	With CreateObject("Scripting.FileSystemObject")
+		realPath = .GetParentFolderName(WScript.ScriptFullName) & "\"
+		realPath = realPath & relativePath
+		If .FileExists(realPath) Then 
+			FileExists = True
+		Else 
+			FileExists = False
+		End If
+	End With
+End Function
 ' ---------------------------------------------------------------------------
 ' Subroutine:  Include
 ' Purpose:     Includes, or loads, other vbscript files

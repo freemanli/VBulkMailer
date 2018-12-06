@@ -66,8 +66,8 @@
 			<Item id="8005" name="附件檔案"/>
 			<Item id="8015" name="共同附件檔案"/>
 			<Item id="8025" name="個別附件檔案"/>
-			<Item id="8035" name="個別附件檔案中，%s 表示該郵件的列數編號"/>
-			<Item id="8045" name="例如個別附件檔 AAA%s.txt 表示當收件者位於 Excel 第25列，那麼只有他會收到一個名為 AAA25.txt 的附加檔"/>
+			<Item id="8035" name="請自行將附件檔案放置於 mail 資料夾中"/>
+			<Item id="8045" name="個別附件檔案中，%s 表示該郵件的列數編號，例如個別附件檔 AAA%s.txt 表示當收件者位於 Excel 第25列，那麼只有他會收到一個名為 AAA25.txt 的附加檔"/>
 			<Item id="8055" name="下列欄位不填就不會寄"/>
 			<Item id="8006" name="結束編輯"/>
 			<Item id="SMTP_smtpserver" name="SMTP 伺服器名稱"/>

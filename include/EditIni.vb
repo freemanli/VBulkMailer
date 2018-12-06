@@ -23,7 +23,7 @@ Sub EditIni()
 	Dim sMeta, sStyle, sScript, sBody
 	Dim i, key, section
 	Dim flagChange : flagChange = False
-	Dim sEnd : sEnd = vbCrlf
+	Dim sEnd : sEnd = ""
 	Dim editTitle : editTitle = "SETUP"
 	'WScript.Echo "Here"
 	
@@ -121,10 +121,24 @@ Sub EditIni()
 	For Each key In oIni.parser("MailTo")
 		sBody = sBody & "<tr>"
 		sBody = sBody & "<td class='tdkey'>" & key & "</td>"
-		sBody = sBody & "<td> = </td>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='MailTo_" & key & "' value='" & oIni.parser("MailTo")(key) & "' onchange='change(""MailTo"",""" & key & """)'/>"
-		sBody = sBody & "<span id='MailTo_" & key & "_status'></span></td>"
-		sBody = sBody & "<td class='explain'>" & oLang("MailTo_" & key ) & "</td>"
+		sBody = sBody & "<td> = </td><td>"
+		If key = "File" Then
+			sBody = sBody & "<input type='text'  class='inptext' id='MailTo_" & key & "' value='"
+			If FileExists(oIni.parser("App")("MailFolder") & "\" & oIni.parser("MailTo")(key)) Then
+				sBody = sBody & oIni.parser("MailTo")(key) 
+			Else 	
+				Call oIni.Write("MailTo", "File", "")
+			End If
+			sBody = sBody & "' disabled><br/>"
+			sBody = sBody & "<input type='file' id='MailTo_" & key & "_Path' value='' " 
+			sBody = sBody & "accept='.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' " 
+			sBody = sBody & "onchange='change(""MailTo"",""" & key & """)'/>"
+		Else
+			sBody = sBody & "<input type='text' class='inptext' id='MailTo_" & key & "' value='" & oIni.parser("MailTo")(key) & "' onchange='change(""MailTo"",""" & key & """)'/>"
+		End If
+		sBody = sBody & "<span id='MailTo_" & key & "_status'></span>"
+		
+		sBody = sBody & "</td><td class='explain'>" & oLang("MailTo_" & key ) & "</td>"
 		sBody = sBody & "</tr>"
 	Next
 	sBody = sBody & "</table><span class='secTitle'>" & oLang("8023") & "</span><br/><table class='article'>"
@@ -150,10 +164,23 @@ Sub EditIni()
 	For Each key In oIni.parser("Letter")
 		sBody = sBody & "<tr>"
 		sBody = sBody & "<td class='tdkey'>" & key & "</td>"
-		sBody = sBody & "<td> = </td>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='Letter_" & key & "' value='" & oIni.parser("Letter")(key) & "' onchange='change(""Letter"",""" & key & """)'/>"
-		sBody = sBody & "<span id='Letter_" & key & "_status'></span></td>"
-		sBody = sBody & "<td class='explain'>" & oLang("Letter_" & key ) & "</td>"
+		sBody = sBody & "<td> = </td><td>"
+		If key = "File" Then
+			sBody = sBody & "<input type='text'  class='inptext' id='Letter_" & key & "' value='"
+			If FileExists(oIni.parser("App")("MailFolder") & "\" & oIni.parser("Letter")(key)) Then
+				sBody = sBody & oIni.parser("Letter")(key) 
+			Else 	
+				Call oIni.Write("Letter", "File", "")
+			End If
+			sBody = sBody & "' disabled><br/>"
+			sBody = sBody & "<input type='file' id='Letter_" & key & "_Path' value='' " 
+			sBody = sBody & "accept='.txt, .htm, .html' " 
+			sBody = sBody & "onchange='change(""Letter"",""" & key & """)'/>"
+		Else
+			sBody = sBody & "<input type='text' class='inptext' id='Letter_" & key & "' value='" & oIni.parser("Letter")(key) & "' onchange='change(""Letter"",""" & key & """)'/>"
+		End If
+		sBody = sBody & "<span id='Letter_" & key & "_status'></span>"
+		sBody = sBody & "</td><td class='explain'>" & oLang("Letter_" & key ) & "</td>"
 		sBody = sBody & "</tr>"
 	Next
 	sBody = sBody & "</table></div>" & sEnd
@@ -167,17 +194,32 @@ Sub EditIni()
 					oLang("8015") & "</th><th>" & _
 					oLang("8025") & "</th></tr>" & sEnd
 	For i = 0 To 4
-		sBody = sBody & "<tr>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='Attachements_File" & i & "' value='" & oIni.parser("Attachements")("File"&i) & "' onchange='change(""Attachements"",""File" & i & """)'/>"
-		sBody = sBody & "<span id='Attachements_File" & i & "_status'></span></td>"
-		sBody = sBody & "<td><input type='text' class='inptext' id='HisAttachements_File" & i & "' value='" & oIni.parser("HisAttachements")("File"&i) & "' onchange='change(""HisAttachements"",""File" & i & """)'/>"
-		sBody = sBody & "<span id='HisAttachements_File" & i & "_status'></span></td>"
+		sBody = sBody & "<tr><td>"
+
+		sBody = sBody & "<input type='text'  class='inptext' id='Attachements_Attach" & i & "' value='"
+		If FileExists(oIni.parser("App")("MailFolder") & "\" & oIni.parser("Attachements")("Attach" & i)) Then
+			sBody = sBody & oIni.parser("Attachements")("Attach" & i) 
+		Else 	
+			Call oIni.Write("Attachements", "Attach" & i, "")
+		End If
+		sBody = sBody & "' "
+'		sBody = sBody & "<input type='file' id='Attachements_" & "File" & i & "_Path' value='' " 
+'		sBody = sBody & "accept='text/plain, text/html, .htm' " 
+		sBody = sBody & "onchange='change(""Attachements"",""" & "Attach" & i & """)'/>"
+		
+'		sBody = sBody & "<input type='text' class='inptext' id='Attachements_File" & i & "' value='" & oIni.parser("Attachements")("File"&i) & "' onchange='change(""Attachements"",""File" & i & """)'/>"
+		sBody = sBody & "<span id='Attachements_Attach" & i & "_status'></span>"
+
+		sBody = sBody & "</td><td><input type='text' class='inptext' id='HisAttachements_Attach" & i & "' value='" & oIni.parser("HisAttachements")("Attach"&i) & "' onchange='change(""HisAttachements"",""Attach" & i & """)'/>"
+		sBody = sBody & "<span id='HisAttachements_Attach" & i & "_status'></span></td>"
 		sBody = sBody & "</tr>"
 	Next
-	sBody = sBody & "</table>"
-	sBody = sBody & "<p><button name='close' type='button' onclick='" 
-	sBody = sBody & "document.title=""" & editTitle & "_close"";' style='font-weight: bold;float:right;'>" & oLang("8006") & "</button></p>"
-	sBody = sBody & "</div>" & sEnd
+	sBody = sBody & "</table><p>"
+	sBody = sBody & "<button name='exit' type='button' onclick='" 
+	sBody = sBody & "document.title=""" & editTitle & "_exit"";' style='font-weight: bold;float:right; margin:5px 10px; color:red; '>" & oLang("7000") & "</button>"
+	sBody = sBody & "<button name='close' type='button' onclick='" 
+	sBody = sBody & "document.title=""" & editTitle & "_close"";' style='font-weight: bold;float:right; margin:5px 10px;'>" & oLang("8006") & "</button>"
+	sBody = sBody & "</p></div>" & sEnd
 	
 	Dim editGUI : Set editGUI = New IE_GUI
 	With editGUI
@@ -192,40 +234,81 @@ Sub EditIni()
  		.Show "editGUI"
 		.Scroll = False
 		
-		Dim newTitle, iniSecKey, flagFile, flagIniWrite, checkFile, checkNo, newValue
+		Dim newTitle, iniSecKey, flagFile, flagIniWrite, checkFile, checkNo, newValue, sourcePath, targetPath, wsName
+		
 		While Not IsEmpty(.Title)
 			newTitle = .Title
 			If newTitle <> editTitle Then
 				flagFile = True
 				flagIniWrite = True
 				newTitle = Replace(newTitle, editTitle & "_", "")
+				
 				If newTitle = "close" Then
 					.Close
+				ElseIf newTitle = "exit" Then
+					.Close
+					Call EndProcess()
 				Else
 					iniSecKey = Split(newTitle, "_")
+					' Make Sure it is a changing event
 					If IsArray(iniSecKey) And UBound(iniSecKey)=1 Then
 						newValue = .GetElementByID(newTitle).value
-						If InStr(iniSecKey(1), "File")>0 And Trim(newValue) <> "" Then	' check file exist
-							checkFile = fso.GetParentFolderName(WScript.ScriptFullName) & "\"
-							checkFile = checkFile & oIni.parser("App")("MailFolder") & "\"
-							If iniSecKey(0) = "HisAttachements" Then
-								checkNo = oIni.parser("MailTo")("StartNo")
-								If checkNo = "" Then checkNo = 1
-								checkFile = checkFile & Replace(newValue, "%s", checkNo)
-							Else
-								checkFile = checkFile & newValue
+						If ( InStr(iniSecKey(1), "File")>0 Or InStr(iniSecKey(1), "Attach")>0 ) _
+							And Trim(newValue) <> "" Then		
+							' Files And Attachements
+							targetPath = fso.GetParentFolderName(WScript.ScriptFullName) & "\"
+							targetPath = targetPath & oIni.parser("App")("MailFolder") & "\"
+							
+							If InStr(iniSecKey(1), "File")>0 Then	' File
+								sourcePath = .GetElementByID(newTitle & "_Path").value
+								targetPath = targetPath & Mid(sourcePath, InStrRev(sourcePath,"\")+1)
+								' Copy File
+								fso.CopyFile sourcePath, targetPath
+								.GetElementByID(newTitle).value = Mid(sourcePath, InStrRev(sourcePath,"\")+1)
+								' Now to modify MailTo_Worksheet and Letter_Format
+								If iniSecKey(0) = "Letter" Then
+									If LCase(Right(targetPath, 3)) = "txt" Then
+										.GetElementByID("Letter_Format").value = "TEXT"
+										Call oIni.Write("Letter", "Format", "TEXT")
+									Else
+										.GetElementByID("Letter_Format").value = "HTML"
+										Call oIni.Write("Letter", "Format", "HTML")
+									
+									End If
+								Else	' EXCEL
+									With CreateObject("Excel.Application")
+										' WScript.Echo  targetPath
+										.Workbooks.Open targetPath
+										wsName = .Worksheets(1).Name
+										.Workbooks.Close False
+										.Workbooks.Quit
+									End With
+									.GetElementByID("MailTo_Worksheet").value = wsName
+									Call oIni.Write("MailTo", "Worksheet", wsName)
+								End If
+								
+							Else									' Attachemensts
+								If iniSecKey(0) = "HisAttachements" Then
+									checkNo = oIni.parser("MailTo")("StartNo")
+									If checkNo = "" Then checkNo = 1
+									targetPath = targetPath & Replace(newValue, "%s", checkNo)
+								Else
+									targetPath = targetPath & newValue
+								End If
 							End If
-							If Not fso.FileExists(checkFile) Then
+							
+							If Not fso.FileExists(targetPath) Then
 								flagFile = False
-								'WScript.Echo checkFile
 								.GetElementByID(newTitle).value = oIni.parser(iniSecKey(0))(iniSecKey(1))
 							End If
 						End If
+						
 						If flagFile Then
 							If Not oIni.Write(iniSecKey(0), iniSecKey(1), .GetElementByID(newTitle).value) Then
 								flagIniWrite = False
 							End If
 						End If
+						
 						If flagFile And flagIniWrite Then
 							.GetElementByID(newTitle & "_status").innerHTML = "<img src=""mail_okay.png"" style=""width:17px;"" />"
 							flagChange = True
