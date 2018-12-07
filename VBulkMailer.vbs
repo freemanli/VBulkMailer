@@ -308,6 +308,8 @@ Function Initialize()
 		.CopyFile sourcePath & "mail_error.png", destinationPath & "mail_error.png"
 		.CopyFile sourcePath & "mail_okay.png", destinationPath & "mail_okay.png"
 		.CopyFile sourcePath & "mail_progress.gif", destinationPath & "mail_progress.gif"
+		If Not .FolderExists(scriptPath & "\log") Then .CreateFolder(scriptPath & "\log")
+		If Not .FolderExists(scriptPath & "\mail") Then .CreateFolder(scriptPath & "\mail")
 	End With
 	Call ParseIni()
 	Call ParseLang()
@@ -374,6 +376,7 @@ Sub ParseIni()
 		oIni.Read INI_FILE
 	Else
 		WScript.Echo Replace("Can not Find %1. VBulkMailer System Terminated!", "%1", INI_FILE)
+		Call EndProcess()
 	End If
 End Sub
 
