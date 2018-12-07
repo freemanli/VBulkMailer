@@ -1,4 +1,6 @@
-Reference
+!.gitignore
 *.ini
+*.log
 log/
 mail/
+Reference
