@@ -28,6 +28,8 @@ Sub EditIni()
 	'WScript.Echo "Here"
 	
 	sMeta = "<meta name='viewport' content='width=device-width, initial-scale=1'/>" & sEnd
+	sMeta = sMeta & "<meta http-equiv='content-type' content='text/html; charset=big5'>"
+	'sMeta = sMeta & "<meta http-equiv='content-type' content='text/html; charset=utf-8'>"
 
 	sStyle = ""
 	sStyle = sStyle & "<style>"  & sEnd

@@ -99,6 +99,7 @@
 		</EditIni>
 		<EndJob>
 			<Item id="7000" name="結束程式"/>
+			<Item id="7001" name="無法讀取 %1 檔案進行初始化，系統即將關閉！"/>
 			<Item id="F001" name="Dreamer! 完工了！"/>
 		</EndJob>
 		<test>

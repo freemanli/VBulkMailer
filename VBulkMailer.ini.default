@@ -1,0 +1,64 @@
+[SMTP]		
+sendusing 				= 2
+smtpserver				= "smtp.server.com"
+smtpserverport			= 25
+smtpauthenticate 		= 1	
+smtpusessl 				= 1
+smtpconnectiontimeout	= 30
+sendusername 			= "jonedoe@some.one.com"
+sendpassword 			= "password"
+
+[BodyPart]
+ContentTransferEncoding	= ""
+Charset 				= ""
+
+[Sender]
+Name					= ""
+From 					= ""
+ReplyTo 				= ""
+
+[Bcc]
+Name					= ""
+MailTo					= ""
+
+[TestTo]
+Name					= ""
+MailTo					= ""
+
+[MailTo]
+File					= ""
+Worksheet 				= ""
+StartNo					= 
+EndNo					= 
+
+
+[ColumnName]
+Email					= ""
+Name					= ""
+
+[Letter]
+Subject					= ""
+File					= ""
+Format					= ""
+PreTag					= ""
+PostTag					= ""
+
+[Attachements]
+Attach0					= ""
+Attach1					= ""
+Attach2					= ""
+Attach3					= ""
+Attach4					= ""
+
+[HisAttachements]
+Attach0					= ""
+Attach1					= ""
+Attach2					= ""
+Attach3					= ""
+Attach4					= ""
+
+[App]
+Lang					= "zh_TW"
+LangFolder				= "Locale"
+MailFolder				= "mail"
+LogFile					= "log\mailsender.log" 

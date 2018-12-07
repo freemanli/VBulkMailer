@@ -26,14 +26,15 @@ Include("include\xlsreader.vb")
 Include("include\ExtMessage.vb")
 Include("include\EditIni.vb")
 Const WAIT_TIME = 5000
+Const INI_FILE = "VBulkMailer.ini"
 ' Declare Global Variable
-Dim oIni, oLang, oExcel, oMsg, sLetter, fso, procGUI
+Dim oIni, oLang, oExcel, oMsg, sLetter, fso, procGUI, scriptPath
 
 Call Main
 
 Sub Main()
 	Dim execStep, sBody, i
-	Dim mailerTitle : mailerTitle = "Mailer"
+	Dim mailerTitle : mailerTitle = "VBulkMailer"
 	
 	If Not Initialize() Then Call EditIni()
 	
@@ -302,6 +303,7 @@ Function Initialize()
 	' copy image files
 	With fso
 		Dim sourcePath : sourcePath = .GetParentFolderName(WScript.ScriptFullName)& "\"
+		scriptPath = sourcePath
 		Dim destinationPath : destinationPath = .GetSpecialFolder(2) & "\"
 		.CopyFile sourcePath & "mail_error.png", destinationPath & "mail_error.png"
 		.CopyFile sourcePath & "mail_okay.png", destinationPath & "mail_okay.png"
@@ -365,7 +367,14 @@ End Sub
 
 Sub ParseIni()
 	Set oIni = New IniFile
-	oIni.Read "Mailer.ini"
+	If FileExists(INI_FILE) Then
+		oIni.Read INI_FILE
+	ElseIf FileExists(INI_FILE & ".default") Then
+		fso.CopyFile scriptPath & INI_FILE & ".default", scriptPath & INI_FILE
+		oIni.Read INI_FILE
+	Else
+		WScript.Echo Replace("Can not Find %1. VBulkMailer System Terminated!", "%1", INI_FILE)
+	End If
 End Sub
 
 Function FileExists(relativePath)
