@@ -255,17 +255,20 @@ Sub EditIni()
 					' Make Sure it is a changing event
 					If IsArray(iniSecKey) And UBound(iniSecKey)=1 Then
 						newValue = .GetElementByID(newTitle).value
-						If ( InStr(iniSecKey(1), "File")>0 Or InStr(iniSecKey(1), "Attach")>0 ) _
-							And Trim(newValue) <> "" Then		
+'	WScript.Echo "Here! " & newTitle
+						
+						
+						
+						If ( InStr(iniSecKey(1), "File")>0 Or InStr(iniSecKey(1), "Attach")>0 ) Then		
 							' Files And Attachements
 							targetPath = fso.GetParentFolderName(WScript.ScriptFullName) & "\"
 							targetPath = targetPath & oIni.parser("App")("MailFolder") & "\"
-							
 							If InStr(iniSecKey(1), "File")>0 Then	' File
 								sourcePath = .GetElementByID(newTitle & "_Path").value
 								targetPath = targetPath & Mid(sourcePath, InStrRev(sourcePath,"\")+1)
 								' Copy File
 								fso.CopyFile sourcePath, targetPath
+								' If Err.Number <> 0 Then WScript.Echo Err.Description
 								.GetElementByID(newTitle).value = Mid(sourcePath, InStrRev(sourcePath,"\")+1)
 								' Now to modify MailTo_Worksheet and Letter_Format
 								If iniSecKey(0) = "Letter" Then
@@ -289,7 +292,7 @@ Sub EditIni()
 									Call oIni.Write("MailTo", "Worksheet", wsName)
 								End If
 								
-							Else									' Attachemensts
+							Else						' Attachemensts
 								If iniSecKey(0) = "HisAttachements" Then
 									checkNo = oIni.parser("MailTo")("StartNo")
 									If checkNo = "" Then checkNo = 1
@@ -299,7 +302,7 @@ Sub EditIni()
 								End If
 							End If
 							
-							If Not fso.FileExists(targetPath) Then
+							If Trim(newValue) <> "" And Not fso.FileExists(targetPath) Then
 								flagFile = False
 								.GetElementByID(newTitle).value = oIni.parser(iniSecKey(0))(iniSecKey(1))
 							End If
