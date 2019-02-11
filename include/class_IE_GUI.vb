@@ -95,8 +95,8 @@
 ' #############################################################################################################################################################
 
 ' These constants are used to create the progress bar for IE < 10
-Const IE_GUI_SOLID_BLOCK_CHARACTER = "―"
-Const IE_GUI_EMPTY_BLOCK_CHARACTER = "ー"
+Const IE_GUI_SOLID_BLOCK_CHARACTER = "―" 	' &#9726;
+Const IE_GUI_EMPTY_BLOCK_CHARACTER = "ー" 	' &#9725;
 Const IE_GUI_SOLID_BLOCK_COLOUR = "#ffcc33;"
 Const IE_GUI_EMPTY_BLOCK_COLOUR = "#666666;"
 Const IE_GUI_BLOCKSCOUNT = 28
